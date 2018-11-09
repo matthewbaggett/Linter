@@ -1,0 +1,23 @@
+{
+  "name": "segura/linter",
+  "authors": [
+    {
+      "name": "Matthew Baggett",
+      "email": "matt.baggett@segura.co.uk"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "friendsofphp/php-cs-fixer": "^2.13"
+  },
+  "autoload": {
+    "psr-4": {
+      "Segura\\CodeLinter\\": "src/"
+    }
+  },
+  "bin": [
+    "linter"
+  ]
+}
