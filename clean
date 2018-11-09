@@ -1,3 +1,14 @@
 #!/bin/bash
 
-docker run -v `pwd`/vendor:/clean segura/linter
+for path in "$@"
+do
+	pathLocal="`pwd`/$path"
+	echo $pathLocal
+	docker run -v $pathLocal:/clean segura/linter &
+	pids[${i}]=$!
+done
+
+# wait for all pids
+for pid in ${pids[*]}; do
+    wait $pid
+done

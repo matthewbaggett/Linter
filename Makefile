@@ -2,5 +2,5 @@ prepare:
 	composer install
 build:
 	docker build -t segura/linter .
-push:
+push: prepare build
 	docker push segura/linter
